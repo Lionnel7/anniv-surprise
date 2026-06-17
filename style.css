@@ -1,0 +1,155 @@
+/* ==========================================================================
+   1. RESET ET STYLES DE BASE
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. SECTION ACCUEIL (HERO)
+   ========================================================================== */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #1e1e2f 0%, #11001c 100%);
+    padding: 20px;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 600px;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    color: #ff007f;
+    text-shadow: 0 0 20px rgba(255, 0, 127, 0.6);
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #b3b3b3;
+    margin-bottom: 35px;
+}
+
+/* Bouton Surprise */
+#btn-surprise {
+    background: linear-gradient(45deg, #ff007f, #7928ca);
+    color: white;
+    border: none;
+    padding: 16px 35px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 5px 15px rgba(255, 0, 127, 0.4);
+}
+
+#btn-surprise:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 0, 127, 0.6);
+}
+
+#btn-surprise:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   3. SECTION GALERIE (PHOTOS & VIDÉOS)
+   ========================================================================== */
+.gallery-container {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-container h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #00f2fe;
+    text-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+}
+
+/* Grille Responsive */
+.grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+}
+
+/* Cartes de la galerie */
+.gallery-item {
+    background-color: #1e1e1e;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 242, 254, 0.15);
+}
+
+/* Ajustement des images et vidéos */
+.gallery-item img, 
+.gallery-item video {
+    width: 100%;
+    height: 300px;
+    object-fit: cover; /* Aligne et cadre proprement le contenu */
+    display: block;
+    background-color: #000;
+}
+
+/* Légendes sous les médias */
+.caption {
+    padding: 20px;
+    background-color: #1a1a1a;
+    flex-grow: 1; /* Permet d'aligner les blocs s'ils n'ont pas la même hauteur */
+    border-top: 1px solid #2a2a2a;
+}
+
+.caption h3 {
+    font-size: 1.2rem;
+    color: #00f2fe;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.caption p {
+    font-size: 0.95rem;
+    color: #cccccc;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   4. ANIMATIONS & RESPONSIVE
+   ========================================================================== */
+
+/* Animation du titre au chargement */
+@keyframes pop {
+    0% { 
+        transform: scale(0.8); 
+        opacity: 0; 
+    }
+    100% {
